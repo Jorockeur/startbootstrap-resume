@@ -1,0 +1,168 @@
+.btn-primary {
+  background-color: $secondary;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    background-color: #333333;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+body {
+  font-family: 'Open Sans', serif;
+  padding-top: 54px;
+  color: #868e96;
+
+  @media (min-width: 992px) {
+    padding-top: 0;
+    padding-left: 17rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333333;
+  }
+
+  h1 {
+    font-size: 6rem;
+    line-height: 5.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 4em;
+    }
+  }
+
+  h2 {
+    font-size: 3.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 2.5em;
+    }
+  }
+
+  .subheading {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.35rem;
+  }
+}
+
+#home {
+  @media (max-width: 768px) {
+    padding: 10px 16px 80px 16px !important;
+  }
+}
+
+section {
+  .resume-section {
+    border-bottom: 1px solid #dee2e6;
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+
+    @media (min-width: 992px) {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+
+    @media (min-width: 768px) {
+      min-height: 100vh;
+    }
+
+    .resume-item {
+      .resume-date {
+        @media (min-width: 768px) {
+          min-width: 18rem;
+        }
+      }
+    }
+  }
+}
+
+.mb-0 {
+  li {
+    font-size: 1.4rem;
+  }
+}
+
+.list-social-icons {
+  a {
+    color: #495057;
+
+    &:hover {
+      color: #0086c4;
+    }
+
+    .fa-lg {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+.activity-group {
+  justify-content: space-around;
+
+  .activity-item {
+    margin-bottom: 20px;
+
+    .card {
+      height: 100%;
+
+      .card-body {
+        height: 100%;
+
+        i {
+          width: 100%;
+          font-size: 3.4em;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+.resume-item {
+  .resume-date {
+    @media (min-width: 768px) {
+      min-width: 18rem;
+    }
+  }
+}
+
+.contact-group {
+
+  .contact-item {
+    font-size: 2em;
+
+    &:first-child {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.5em !important;
+    }
+  }
+}
+
+.list-icons {
+  font-size: 3rem;
+
+  li {
+    img {
+      height: 48px;
+      filter: grayscale(100%);
+    }
+  }
+}
