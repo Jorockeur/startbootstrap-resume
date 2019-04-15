@@ -252,6 +252,14 @@ body .subheading {
   }
 }
 
+#about a {
+  color: #FFFFFF;
+}
+
+#about a:hover {
+  text-decoration: none;
+}
+
 section .resume-section {
   border-bottom: 1px solid #dee2e6;
   padding-top: 5rem !important;
