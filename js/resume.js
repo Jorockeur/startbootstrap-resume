@@ -29,25 +29,34 @@
   const body = document.getElementById('page-top');
   const gradientCollection = document.getElementsByClassName('gradient');
   const gradientBackgroundCollection = document.getElementsByClassName('gradient-bg');
+  const gradientSVGCollection = document.getElementsByClassName('gradient-svg');
   const animationScaleCollection = document.getElementsByClassName('scale-animation');
   const hslHOffset = 110;
-  const hslSOffset = 70;
+  const hslSOffset = 50;
   const hslLOffset = 42;
   let gradientColor = `hsl(${hslHOffset}, ${hslSOffset}%, ${hslLOffset}%)`;
 
   const setGradientColor = (base, elements, scrollTop, windowHeight) => {
-    let ratio = ((360 / base.clientHeight * (scrollTop + (scrollTop / base.clientHeight * windowHeight))) + hslHOffset);
-    gradientColor = `hsl(${ratio}, ${hslSOffset}%, ${hslLOffset}%)`;
+    let hueRatio = ((360 / base.clientHeight * (scrollTop + (scrollTop / base.clientHeight * windowHeight))) + hslHOffset);
+    gradientColor = `hsl(${hueRatio}, ${hslSOffset}%, ${hslLOffset}%)`;
 
-    if (elements === gradientCollection) {
-      for (let element of elements) {
-        element.style.color = gradientColor;
-      }
-      return;
-    }
-
-    for (let element of elements) {
-      element.style.backgroundColor = gradientColor;
+    switch (elements) {
+      case gradientCollection:
+        for (let element of elements) {
+          element.style.color = gradientColor;
+        }
+        break;
+      case gradientBackgroundCollection:
+        for (let element of elements) {
+          element.style.backgroundColor = gradientColor;
+        }
+        break;
+      case gradientSVGCollection:
+        for (let element of elements) {
+          // element.style.filter = `hue-rotate(${hueRatio - 204}deg) saturate(80%) brightness(157%)`;
+          element.style.filter = `saturate(8%) brightness(133%)`;
+        }
+        break;
     }
   };
 
@@ -95,6 +104,18 @@
     const windowHeight = e.target.scrollingElement.clientHeight;
     const scrollTop = e.target.scrollingElement.scrollTop;
     setGradientColor(body, gradientBackgroundCollection, scrollTop, windowHeight);
+  });
+
+  window.addEventListener('DOMContentLoaded', e => {
+    const windowHeight = e.target.scrollingElement.clientHeight;
+    const scrollTop = e.target.scrollingElement.scrollTop;
+    setGradientColor(body, gradientSVGCollection, scrollTop, windowHeight);
+  });
+
+  window.addEventListener('scroll', e => {
+    const windowHeight = e.target.scrollingElement.clientHeight;
+    const scrollTop = e.target.scrollingElement.scrollTop;
+    setGradientColor(body, gradientSVGCollection, scrollTop, windowHeight);
   });
 
   for (let element of animationScaleCollection) {

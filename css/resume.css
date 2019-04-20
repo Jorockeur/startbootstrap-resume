@@ -351,6 +351,4 @@ section .resume-section {
 
 .list-icons li img {
   height: 48px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
 }
